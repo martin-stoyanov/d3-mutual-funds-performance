@@ -17,8 +17,12 @@
     <div style = "margin-left: 30px; margin-right: 30px;">
       <svg id="line_chart" height="490" width="900" style="text-align:center; background: #fff;" ></svg>
       <script>
+        // 2007-2019 performance of 20 of the best funds from 1987-2007, from
+        // https://www.thestreet.com/story/10385337/1/best-performing-funds-over-the-past-20-years.html
+        // except for VCAGX, can't find data on it
+
         const getFundsData = async () => {
-          const funds = ["VGHCX", "KAUAX", "VGENX", "FPPTX", "FSCSX", "VCAGX", "FCNTX",
+          const funds = ["VGHCX", "KAUAX", "VGENX", "FPPTX", "FSCSX", "FCNTX",
             "UNSCX", "SLMCX", "FSLBX", "FSRBX", "VGRIX", "FSPCX", "LLPFX", "FSHCX", "FSVLX",
             "ETHSX", "MPGFX", "JAVLX", "SPECX"];
           let historicalPrices = {};
@@ -28,7 +32,7 @@
           for await (const fund of funds) {
             monthlyData = {};
             let prices = await Promise.all([
-              await d3.csv(`./${fund}.csv`)
+              await d3.csv(`./datasets/${fund}.csv`)
             ]);
             prices[0].forEach( (month) => {
               if(!(month.Close === "null")){
