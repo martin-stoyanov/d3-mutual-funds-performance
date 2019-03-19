@@ -92,8 +92,8 @@
             .curve(d3.curveMonotoneX) // apply smoothing to the line
 
           let bottomAxis = d3.axisBottom(xScale)
-            .ticks(10)
-            .tickFormat( d => (d.getMonth() + 1) + '/' +  d.getFullYear())
+            .ticks(9)
+            .tickFormat( d => (d.getFullYear()))
             .tickSize(0);
 
           let leftAxis = d3.axisLeft(yScale)
@@ -120,6 +120,20 @@
               .attr("transform", "rotate(45)")
               .style("text-anchor", "start");
 
+
+          let leftGridlines = d3.axisLeft(yScale).tickSize(-width).tickFormat("");
+          svg.append("g")
+            .attr("class", "gridlines")
+            .attr("transform","translate("+ (margin.left) +","+ margin.top +")")
+            .call(leftGridlines);
+          
+          let bottomGridlines = d3.axisBottom(xScale).tickSize(height).tickFormat("");
+          svg.append("g")
+            .attr("class", "gridlines")
+            .attr("transform","translate("+ (margin.left) +","+ margin.top +")")
+            .call(bottomGridlines);
+          
+          
           var dataset = d3.range(21).map(function(d) { return {"y": d3.randomUniform(1)() } })
           //console.log(dataset); 
         });
