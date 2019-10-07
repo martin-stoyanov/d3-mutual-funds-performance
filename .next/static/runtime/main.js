@@ -4818,7 +4818,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/Martin/PycharmProjects/react_mutual_funds_prices/.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/Martin/PycharmProjects/mutual_fund_prices/.next");
       return error;
     }
   };
