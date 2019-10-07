@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^6.5.1",
     "next": "^9.0.6",
     "react": "^16.9.0",
     "react-d3-components": "^0.9.1",
