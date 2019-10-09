@@ -1,7 +1,14 @@
-import * as datasets from datasets;
+import 'react-d3-components';
+import LineChartContainer from "../components/LineChartContainer";
+
+// import 'ETHSX.csv' from '../datasets';
+
 export default class extends React.Component { 
   render() {
-    console.log("ETHSX.csv");
-  return <h1> Hello !</h1>
+  return (
+    <div>
+      <LineChartContainer/>
+    </div>
+  );
 }
 }
