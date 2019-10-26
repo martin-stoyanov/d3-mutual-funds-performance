@@ -17,5 +17,13 @@
     "react": "^16.9.0",
     "react-d3-components": "^0.9.1",
     "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0"
   }
 }
